@@ -53,12 +53,15 @@ def phase2_verify(suspect_image, owner_share, original_logo):
 
     similarity = verify_logo(original_logo, logo)
 
+    similarity_percent = similarity * 100
+
     if similarity > 0.8:
         result = "Copyright Verified"
     else:
         result = "Copyright Not Verified"
 
     print("Verification Result:", result)
-    print("Similarity:", similarity*100,"%")
+    print("Similarity:", similarity_percent,"%")
 
-    return result
+    # 🔹 return BOTH values
+    return result, similarity_percent

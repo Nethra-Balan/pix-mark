@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>PixMark - Copyright Protection</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>PixMark</h1>
+
+<h2>Embed Watermark</h2>
+
+<label>Original Image</label>
+<input type="file" id="original">
+
+<label>Logo / Watermark</label>
+<input type="file" id="logo">
+
+<button onclick="embed()">Generate Watermark</button>
+
+<div id="embed_result"></div>
+
+<hr>
+
+<h2>Verify Copyright</h2>
+
+<label>Suspect Image</label>
+<input type="file" id="suspect">
+
+<label>Owner Share</label>
+<input type="file" id="owner">
+
+<label>Original Logo</label>
+<input type="file" id="logo_verify">
+
+<button onclick="verify()">Verify</button>
+
+<div id="verify_result"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
