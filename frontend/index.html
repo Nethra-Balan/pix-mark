@@ -1,45 +1,70 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-<title>PixMark - Copyright Protection</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixMark - Copyright Protection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<h1>PixMark</h1>
+    <div class="container">
+        <header class="app-header">
+            <h1>PixMark</h1>
+            <p>Digital Watermarking & Copyright Protection</p>
+        </header>
 
-<h2>Embed Watermark</h2>
+        <div class="dashboard">
+            <div class="card">
+                <div class="card-header">
+                    <h2>🔒 Embed Watermark</h2>
+                    <p class="subtitle">Secure your images with a hidden logo.</p>
+                </div>
 
-<label>Original Image</label>
-<input type="file" id="original">
+                <div class="input-group">
+                    <label for="original">Original Image</label>
+                    <input type="file" id="original" accept="image/*">
+                </div>
 
-<label>Logo / Watermark</label>
-<input type="file" id="logo">
+                <div class="input-group">
+                    <label for="logo">Logo / Watermark</label>
+                    <input type="file" id="logo" accept="image/*">
+                </div>
 
-<button onclick="embed()">Generate Watermark</button>
+                <button class="primary-btn" onclick="embed()">Generate Watermark</button>
 
-<div id="embed_result"></div>
+                <div id="embed_result" class="result-box"></div> 
+            </div>
 
-<hr>
+            <div class="card">
+                <div class="card-header">
+                    <h2>🛡️ Verify Copyright</h2>
+                    <p class="subtitle">Check an image for your hidden watermark.</p>
+                </div>
 
-<h2>Verify Copyright</h2>
+                <div class="input-group">
+                    <label for="suspect">Suspect Image</label>
+                    <input type="file" id="suspect" accept="image/*">
+                </div>
 
-<label>Suspect Image</label>
-<input type="file" id="suspect">
+                <div class="input-group">
+                    <label for="owner">Owner Share</label>
+                    <input type="file" id="owner" accept="image/*">
+                </div>
 
-<label>Owner Share</label>
-<input type="file" id="owner">
+                <div class="input-group">
+                    <label for="logo_verify">Original Logo</label>
+                    <input type="file" id="logo_verify" accept="image/*">
+                </div>
 
-<label>Original Logo</label>
-<input type="file" id="logo_verify">
+                <button class="primary-btn" onclick="verify()">Verify</button>
 
-<button onclick="verify()">Verify</button>
+                <div id="verify_result" class="result-box"></div>
+            </div>
+        </div>
+    </div>
 
-<div id="verify_result"></div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
